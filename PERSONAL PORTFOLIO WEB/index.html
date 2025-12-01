@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khushi | Frontend Developer</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body class="bg-gray-900 text-white font-sans">
+
+  <!-- Navbar -->
+  <header class="bg-gray-900 text-white fixed top-0 left-0 w-full shadow-md z-50">
+    <div class="max-w-8xl mx-auto flex items-center justify-between px-6 py-6">
+
+      <!-- Logo -->
+      <h1 class="text-3xl font-bold text-yellow-500">MyPortfolio</h1>
+
+      <!-- Menu (Desktop) -->
+      <nav class="hidden md:flex space-x-6 font-bold">
+        <a href="#hero" class="hover:text-yellow-400 transition">Home</a>
+        <a href="#about" class="hover:text-yellow-400 transition">About</a>
+        <a href="#skills" class="hover:text-yellow-400 transition">Skills</a>
+        <a href="#projects" class="hover:text-yellow-400 transition">Projects</a>
+        <a href="#contact" class="hover:text-yellow-400 transition">Contact</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="menu-btn" class="md:hidden text-2xl focus:outline-none">
+        ☰
+      </button>
+    </div>
+
+    <!-- Mobile Menu (hidden by default) -->
+    <div id="mobile-menu" class="hidden flex-col bg-gray-800 md:hidden px-6 pb-4 space-y-3">
+      <a href="#hero" class="block hover:text-red-400 transition">Home</a>
+      <a href="#about" class="block hover:text-red-400 transition">About</a>
+      <a href="#skills" class="block hover:text-red-400 transition">Skills</a>
+      <a href="#projects" class="block hover:text-red-400 transition">Projects</a>
+      <a href="#contact" class="block hover:text-red-400 transition">Contact</a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12 px-6 pt-20">
+
+    <!-- Left Content -->
+    <div class="flex-1 text-center md:text-left">
+      <p class="text-gray-300 font-bold">Hello 👋 !</p>
+      <h1 class="text-4xl md:text-5xl font-bold mt-2">
+        I'm <span class="text-yellow-400">Khushi Koshe</span>
+      </h1>
+      <h2 class="text-2xl md:text-3xl font-semibold mt-2">
+        I'm a <span class="text-blue-400">Frontend eveloper</span>
+      </h2>
+      <p class="mt-4 text-gray-300 max-w-lg">
+        I specialize in developing and deploying responsive web applications with clean design and interactive UI.
+      </p>
+
+      <!-- Social Icons -->
+      <div class="flex justify-center md:justify-start gap-4 mt-6">
+        <a href="#" class="text-yellow-400 text-2xl hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="text-yellow-400 text-2xl hover:scale-110 transition"><i class="fab fa-github"></i></a>
+        <a href="#" class="text-yellow-400 text-2xl hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+      </div>
+
+      <!-- Contact Button -->
+      <div class="mt-6">
+        <a href="#contact"
+          class="bg-yellow-400 text-black font-bold px-5 py-3 rounded-lg shadow  hover:bg-yellow-600 transition">
+          Contact Me
+        </a>
+      </div>
+    </div>
+
+    <!-- Right Content -->
+    <div class="flex-1 flex justify-center">
+      <img src="assets/profile1.png" alt="Coding Illustration" class="w-80 md:w-[420px]">
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="py-20 bg-gray-800 text-center px-6">
+    <h2 class="text-3xl font-bold mb-6 text-yellow-400">About Me</h2>
+    <p class="max-w-3xl mx-auto text-gray-300 mb-6">
+      Hi, I'm <span class="text-yellow-400 font-semibold">Khushi Koshe</span>,
+      a passionate <span class="text-blue-400 font-semibold">Frontend Developer</span> who loves creating
+      clean, responsive, and interactive web applications.
+      I enjoy turning ideas into reality using code and building modern websites
+      that deliver great user experiences.
+    </p>
+
+    <!-- Download Resume Button -->
+    <a href="assets/Khushi-Resume.pdf" download
+      class="inline-block bg-yellow-500 text-black font-bold px-6 py-3 rounded-lg shadow hover:bg-yellow-600 transition">
+      Download Resume <i class="fa-solid fa-download ml-2"></i>
+    </a>
+  </section>
+
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-gray-800 text-center px-6">
+    <h2 class="text-3xl font-bold mb-12 text-yellow-400">My Skills</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+      <!-- Skill 1 -->
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900 rounded-xl p-8 shadow-lg 
+                transform transition duration-700 ease-out hover:scale-105 hover:shadow-red-500/40">
+        <i class="fa-brands fa-html5 text-5xl text-red-500 mb-4"></i>
+        <h3 class="text-xl font-semibold text-white mb-4">HTML</h3>
+        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+          <div class="progress-bar-html bg-red-500 h-3 w-0 transition-all duration-1000"></div>
+        </div>
+        <p class="text-gray-300 mt-3">Strong foundation in semantic and responsive HTML.</p>
+      </div>
+
+      <!-- Skill 2 -->
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900 rounded-xl p-8 shadow-lg 
+                transform transition duration-700 ease-out hover:scale-105 hover:shadow-blue-500/40">
+        <i class="fa-brands fa-css3-alt text-5xl text-blue-400 mb-4"></i>
+        <h3 class="text-xl font-semibold text-white mb-4">CSS</h3>
+        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+          <div class="progress-bar-css bg-blue-400 h-3 w-0 transition-all duration-1000"></div>
+        </div>
+        <p class="text-gray-300 mt-3">Expert in styling, animations, and responsive layouts.</p>
+      </div>
+
+      <!-- Skill 3 -->
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900 rounded-xl p-8 shadow-lg 
+                transform transition duration-700 ease-out hover:scale-105 hover:shadow-yellow-400/40">
+        <i class="fa-brands fa-js text-5xl text-yellow-400 mb-4"></i>
+        <h3 class="text-xl font-semibold text-white mb-4">JavaScript</h3>
+        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
+          <div class="progress-bar-js bg-yellow-400 h-3 w-0 transition-all duration-1000"></div>
+        </div>
+        <p class="text-gray-300 mt-3">Proficient in building interactive web apps and dynamic UI.</p>
+      </div>
+
+    </div>
+  </section>
+
+
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-20 bg-gray-900 text-center px-6">
+    <h2 class="text-3xl font-bold mb-12 text-yellow-400">My Projects</h2>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
+
+      <!-- Project 1 -->
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 hover:shadow-yellow-500/40 transition duration-500 group">
+        <img src="assets/project1.jpg" alt="Project 1"
+          class="w-full h-48 object-cover group-hover:opacity-80 transition">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-semibold mb-2 text-white">Portfolio Website</h3>
+          <p class="text-gray-300 mb-4">
+            A personal portfolio website built using HTML, CSS, and JavaScript with animations.
+          </p>
+          <a href="#" target="_blank"
+            class="inline-block bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 2 -->
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 hover:shadow-yellow-500/40 transition duration-500 group">
+        <img src="assets/project2.jpg" alt="Project 2"
+          class="w-full h-48 object-cover group-hover:opacity-80 transition">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-semibold mb-2 text-white">E-commerce UI</h3>
+          <p class="text-gray-300 mb-4">
+            A responsive e-commerce website UI with modern grid design and interactive elements.
+          </p>
+          <a href="#" target="_blank"
+            class="inline-block bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div
+        class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform hover:scale-105 hover:shadow-yellow-400/40 transition duration-500 group">
+        <img src="assets/project3.jpg" alt="Project 3"
+          class="w-full h-48 object-cover group-hover:opacity-80 transition">
+        <div class="p-6 text-left">
+          <h3 class="text-xl font-semibold mb-2 text-white">Restaurant Web</h3>
+          <p class="text-gray-300 mb-4">
+            A weather forecast app using JavaScript API integration with smooth UI animations.
+          </p>
+          <a href="#" target="_blank"
+            class="inline-block bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+            View Project
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-gray-900 text-center">
+    <h2 class="text-3xl font-bold mb-10 text-yellow-500">Contact Me</h2>
+    <form class="max-w-xl mx-auto bg-gray-800 p-6 rounded-lg shadow space-y-4">
+      <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" requiyellow>
+      <input type="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 text-white" requiyellow>
+      <textarea placeholder="Your Message" class="w-full p-3 rounded bg-gray-700 text-white h-32"
+        requiyellow></textarea>
+      <button type="submit"
+        class="bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition">Send
+        Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-6 bg-gray-800 text-center text-gray-400">
+    © 2025 Khushi Koshe. All Rights Reserved.
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+
+</html>
