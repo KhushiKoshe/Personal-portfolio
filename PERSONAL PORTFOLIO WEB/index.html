@@ -5,8 +5,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khushi | Frontend Developer</title>
+  <!-- Google Fonts (Outfit) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
   <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Outfit', 'sans-serif'],
+          },
+          animation: {
+            'spin-slow': 'spin 12s linear infinite',
+            'float': 'float 6s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0)' },
+              '50%': { transform: 'translateY(-20px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
@@ -18,11 +43,16 @@
     <div class="max-w-8xl mx-auto flex items-center justify-between px-6 py-6">
 
       <!-- Logo -->
-      <h1 class="text-3xl font-bold text-yellow-500">MyPortfolio</h1>
+      <a href="#home" class="text-2xl md:text-3xl font-black tracking-wider flex items-center gap-2 group transition duration-300">
+        <div class="bg-gradient-to-br from-yellow-400 to-amber-600 p-2 rounded-lg text-black flex items-center justify-center shadow-lg shadow-yellow-500/20 group-hover:scale-110 transition duration-300">
+          <i class="fa-solid fa-terminal text-xl"></i>
+        </div>
+        <span class="bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-300 bg-clip-text text-transparent">My<span class="text-white font-light group-hover:text-yellow-400 transition duration-300">Portfolio</span></span>
+      </a>
 
       <!-- Menu (Desktop) -->
       <nav class="hidden md:flex space-x-6 font-bold">
-        <a href="#hero" class="hover:text-yellow-400 transition">Home</a>
+        <a href="#home" class="hover:text-yellow-400 transition">Home</a>
         <a href="#about" class="hover:text-yellow-400 transition">About</a>
         <a href="#skills" class="hover:text-yellow-400 transition">Skills</a>
         <a href="#projects" class="hover:text-yellow-400 transition">Projects</a>
@@ -37,7 +67,7 @@
 
     <!-- Mobile Menu (hidden by default) -->
     <div id="mobile-menu" class="hidden flex-col bg-gray-800 md:hidden px-6 pb-4 space-y-3">
-      <a href="#hero" class="block hover:text-red-400 transition">Home</a>
+      <a href="#home" class="block hover:text-red-400 transition">Home</a>
       <a href="#about" class="block hover:text-red-400 transition">About</a>
       <a href="#skills" class="block hover:text-red-400 transition">Skills</a>
       <a href="#projects" class="block hover:text-red-400 transition">Projects</a>
@@ -46,57 +76,60 @@
   </header>
 
   <!-- Hero Section -->
-  <section id="home" class="min-h-[80vh] flex flex-col md:flex-row items-center justify-center gap-12 px-6 pt-20">
+  <section id="home" class="min-h-[85vh] flex flex-col md:flex-row items-center justify-center gap-12 px-6 pt-24 pb-12 bg-gray-900">
 
     <!-- Left Content -->
     <div class="flex-1 text-center md:text-left">
-      <p class="text-gray-300 font-bold">Hello 👋 !</p>
-      <h1 class="text-4xl md:text-5xl font-bold mt-2">
-        I'm <span class="text-yellow-400">Khushi Koshe</span>
+      <span class="text-yellow-400 font-semibold tracking-wider uppercase text-xs bg-yellow-400/10 px-4 py-1.5 rounded-full border border-yellow-400/20 inline-block mb-4">
+        Hello there 👋
+      </span>
+      <h1 class="text-4xl md:text-6xl font-black mt-2 tracking-tight leading-tight text-white">
+        I'm <span class="bg-gradient-to-r from-yellow-400 via-amber-500 to-yellow-300 bg-clip-text text-transparent">Khushi Koshe</span>
       </h1>
-      <h2 class="text-2xl md:text-3xl font-semibold mt-2">
-        I'm a <span class="text-blue-400">Frontend eveloper</span>
+      <h2 class="text-2xl md:text-3.5xl font-bold mt-3 text-gray-200">
+        I'm a <span id="typed-text" class="text-blue-400 border-r-2 border-blue-400 pr-1"></span>
       </h2>
-      <p class="mt-4 text-gray-300 max-w-lg">
-        I specialize in developing and deploying responsive web applications with clean design and interactive UI.
+      <p class="mt-5 text-gray-300 text-lg leading-relaxed max-w-lg">
+        I specialize in engineering high-performance, responsive web applications using React JS and fluid cross-platform mobile apps with React Native.
       </p>
 
       <!-- Social Icons -->
-      <div class="flex justify-center md:justify-start gap-4 mt-6">
-        <a href="https://www.linkedin.com/in/khushi-koshe-670602312" class="text-yellow-400 text-2xl hover:scale-110 transition"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/KHUSHI-KOSHE" class="text-yellow-400 text-2xl hover:scale-110 transition"><i class="fab fa-github"></i></a>
-        <a href="#" class="text-yellow-400 text-2xl hover:scale-110 transition"><i class="fab fa-instagram"></i></a>
+      <div class="flex justify-center md:justify-start gap-5 mt-6">
+        <a href="https://www.linkedin.com/in/khushi-koshe-670602312" class="w-12 h-12 bg-gray-800 hover:bg-yellow-400 text-yellow-400 hover:text-black rounded-xl flex items-center justify-center text-xl shadow-md border border-gray-700/60 hover:scale-110 hover:-translate-y-1 transition duration-300"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://github.com/KHUSHI-KOSHE" class="w-12 h-12 bg-gray-800 hover:bg-yellow-400 text-yellow-400 hover:text-black rounded-xl flex items-center justify-center text-xl shadow-md border border-gray-700/60 hover:scale-110 hover:-translate-y-1 transition duration-300"><i class="fab fa-github"></i></a>
+        <a href="#" class="w-12 h-12 bg-gray-800 hover:bg-yellow-400 text-yellow-400 hover:text-black rounded-xl flex items-center justify-center text-xl shadow-md border border-gray-700/60 hover:scale-110 hover:-translate-y-1 transition duration-300"><i class="fab fa-instagram"></i></a>
       </div>
 
-      <!-- Contact Button -->
-      <div class="mt-6">
+      <!-- Call to Action Buttons -->
+      <div class="mt-8 flex flex-wrap justify-center md:justify-start gap-4">
         <a href="#contact"
-          class="bg-yellow-400 text-black font-bold px-5 py-3 rounded-lg shadow  hover:bg-yellow-600 transition">
+          class="bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-extrabold px-6 py-3.5 rounded-xl shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/30 hover:-translate-y-0.5 transition duration-300">
           Contact Me
+        </a>
+        <a href="#projects"
+          class="border border-gray-700 hover:border-yellow-400/60 text-white hover:text-yellow-400 font-semibold px-6 py-3.5 rounded-xl hover:-translate-y-0.5 transition duration-300">
+          View Projects
         </a>
       </div>
     </div>
 
     <!-- Right Content -->
     <div class="flex-1 flex justify-center">
-      <img src="assets/profile1.png" alt="Coding Illustration" class="w-80 md:w-[420px]">
+      <img src="assets/profile1.png" alt="Coding Illustration" class="w-80 md:w-[450px] animate-float drop-shadow-[0_15px_30px_rgba(234,179,8,0.15)]">
     </div>
   </section>
 
   <!-- About Section -->
   <section id="about" class="py-20 bg-gray-800 text-center px-6">
     <h2 class="text-3xl font-bold mb-6 text-yellow-400">About Me</h2>
-    <p class="max-w-3xl mx-auto text-gray-300 mb-6">
-      Hi, I'm <span class="text-yellow-400 font-semibold">Khushi Koshe</span>,
-      a passionate <span class="text-blue-400 font-semibold">Frontend Developer</span> who loves creating
-      clean, responsive, and interactive web applications.
-      I enjoy turning ideas into reality using code and building modern websites
-      that deliver great user experiences.
+    <p class="max-w-4xl mx-auto text-gray-300 mb-8 text-lg md:text-xl leading-relaxed">
+      Hi, I'm <span class="text-yellow-400 font-semibold">Khushi Koshe</span>, 
+      a passionate <span class="text-blue-400 font-semibold">Frontend & Mobile Developer</span> specialized in building high-performance web applications using <span class="text-cyan-400 font-semibold">React JS</span> and cross-platform mobile experiences using <span class="text-sky-400 font-semibold">React Native</span>. With a strong foundation in modern JavaScript, HTML5, CSS3, and <span class="text-teal-400 font-semibold">Tailwind CSS</span>, I thrive on turning creative layout designs into clean, responsive, and user-centric digital realities.
     </p>
 
     <!-- Download Resume Button -->
     <a href="assets/Khushi_Resume.pdf" download
-      class="inline-block bg-yellow-500 text-black font-bold px-6 py-3 rounded-lg shadow hover:bg-yellow-600 transition">
+      class="inline-block bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-extrabold px-6 py-3.5 rounded-xl shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/30 hover:-translate-y-0.5 transition duration-300">
       Download Resume <i class="fa-solid fa-download ml-2"></i>
     </a>
   </section>
@@ -109,36 +142,81 @@
     <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
 
       <!-- Skill 1 -->
-      <div class="skill-card opacity-0 translate-y-10 bg-gray-900 rounded-xl p-8 shadow-lg 
-                transform transition duration-700 ease-out hover:scale-105 hover:shadow-red-500/40">
-        <i class="fa-brands fa-html5 text-5xl text-red-500 mb-4"></i>
-        <h3 class="text-xl font-semibold text-white mb-4">HTML</h3>
-        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-          <div class="progress-bar-html bg-red-500 h-3 w-0 transition-all duration-1000"></div>
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900/60 backdrop-blur-md border border-gray-800/60 rounded-2xl p-8 shadow-xl 
+                transform transition duration-700 ease-out hover:scale-105 hover:border-red-500/30 hover:shadow-[0_0_30px_rgba(239,68,68,0.15)] flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-red-500/10 border border-red-500/20 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-brands fa-html5 text-4xl text-red-500"></i>
         </div>
-        <p class="text-gray-300 mt-3">Strong foundation in semantic and responsive HTML.</p>
+        <h3 class="text-xl font-bold text-white mb-3">HTML</h3>
+        <div class="w-full bg-gray-700/50 rounded-full h-2.5 overflow-hidden mb-4">
+          <div class="progress-bar bg-red-500 h-2.5 w-0 transition-all duration-1000" data-level="90%"></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Strong foundation in semantic structure, metadata, and responsive HTML elements.</p>
       </div>
 
       <!-- Skill 2 -->
-      <div class="skill-card opacity-0 translate-y-10 bg-gray-900 rounded-xl p-8 shadow-lg 
-                transform transition duration-700 ease-out hover:scale-105 hover:shadow-blue-500/40">
-        <i class="fa-brands fa-css3-alt text-5xl text-blue-400 mb-4"></i>
-        <h3 class="text-xl font-semibold text-white mb-4">CSS</h3>
-        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-          <div class="progress-bar-css bg-blue-400 h-3 w-0 transition-all duration-1000"></div>
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900/60 backdrop-blur-md border border-gray-800/60 rounded-2xl p-8 shadow-xl 
+                transform transition duration-700 ease-out hover:scale-105 hover:border-blue-400/30 hover:shadow-[0_0_30px_rgba(96,165,250,0.15)] flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-blue-400/10 border border-blue-400/20 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-brands fa-css3-alt text-4xl text-blue-400"></i>
         </div>
-        <p class="text-gray-300 mt-3">Expert in styling, animations, and responsive layouts.</p>
+        <h3 class="text-xl font-bold text-white mb-3">CSS</h3>
+        <div class="w-full bg-gray-700/50 rounded-full h-2.5 overflow-hidden mb-4">
+          <div class="progress-bar bg-blue-400 h-2.5 w-0 transition-all duration-1000" data-level="85%"></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Expertise in layout models (Flexbox, Grid), transitions, keyframe animations, and custom styling.</p>
       </div>
 
       <!-- Skill 3 -->
-      <div class="skill-card opacity-0 translate-y-10 bg-gray-900 rounded-xl p-8 shadow-lg 
-                transform transition duration-700 ease-out hover:scale-105 hover:shadow-yellow-400/40">
-        <i class="fa-brands fa-js text-5xl text-yellow-400 mb-4"></i>
-        <h3 class="text-xl font-semibold text-white mb-4">JavaScript</h3>
-        <div class="w-full bg-gray-700 rounded-full h-3 overflow-hidden">
-          <div class="progress-bar-js bg-yellow-400 h-3 w-0 transition-all duration-1000"></div>
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900/60 backdrop-blur-md border border-gray-800/60 rounded-2xl p-8 shadow-xl 
+                transform transition duration-700 ease-out hover:scale-105 hover:border-yellow-400/30 hover:shadow-[0_0_30px_rgba(250,204,21,0.15)] flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-yellow-400/10 border border-yellow-400/20 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-brands fa-js text-4xl text-yellow-400"></i>
         </div>
-        <p class="text-gray-300 mt-3">Proficient in building interactive web apps and dynamic UI.</p>
+        <h3 class="text-xl font-bold text-white mb-3">JavaScript</h3>
+        <div class="w-full bg-gray-700/50 rounded-full h-2.5 overflow-hidden mb-4">
+          <div class="progress-bar bg-yellow-400 h-2.5 w-0 transition-all duration-1000" data-level="80%"></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Proficient in ES6+, DOM manipulation, asynchronous operations, dynamic arrays, and API integration.</p>
+      </div>
+
+      <!-- Skill 4 -->
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900/60 backdrop-blur-md border border-gray-800/60 rounded-2xl p-8 shadow-xl 
+                transform transition duration-700 ease-out hover:scale-105 hover:border-cyan-400/30 hover:shadow-[0_0_30px_rgba(34,211,238,0.15)] flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-cyan-400/10 border border-cyan-400/20 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-brands fa-react text-4xl text-cyan-400 animate-spin-slow"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">React JS</h3>
+        <div class="w-full bg-gray-700/50 rounded-full h-2.5 overflow-hidden mb-4">
+          <div class="progress-bar bg-cyan-400 h-2.5 w-0 transition-all duration-1000" data-level="85%"></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Experienced in functional components, hooks, custom states, router structures, and dynamic rendering.</p>
+      </div>
+
+      <!-- Skill 5 -->
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900/60 backdrop-blur-md border border-gray-800/60 rounded-2xl p-8 shadow-xl 
+                transform transition duration-700 ease-out hover:scale-105 hover:border-sky-400/30 hover:shadow-[0_0_30px_rgba(56,189,248,0.15)] flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-sky-400/10 border border-sky-400/20 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-brands fa-react text-4xl text-sky-400"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">React Native</h3>
+        <div class="w-full bg-gray-700/50 rounded-full h-2.5 overflow-hidden mb-4">
+          <div class="progress-bar bg-sky-500 h-2.5 w-0 transition-all duration-1000" data-level="80%"></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Skilled in building cross-platform native iOS & Android apps using Expo and custom component APIs.</p>
+      </div>
+
+      <!-- Skill 6 -->
+      <div class="skill-card opacity-0 translate-y-10 bg-gray-900/60 backdrop-blur-md border border-gray-800/60 rounded-2xl p-8 shadow-xl 
+                transform transition duration-700 ease-out hover:scale-105 hover:border-teal-400/30 hover:shadow-[0_0_30px_rgba(45,212,191,0.15)] flex flex-col items-center text-center">
+        <div class="w-16 h-16 bg-teal-400/10 border border-teal-400/20 rounded-2xl flex items-center justify-center mb-6">
+          <i class="fa-solid fa-wind text-4xl text-teal-400"></i>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Tailwind CSS</h3>
+        <div class="w-full bg-gray-700/50 rounded-full h-2.5 overflow-hidden mb-4">
+          <div class="progress-bar bg-teal-400 h-2.5 w-0 transition-all duration-1000" data-level="85%"></div>
+        </div>
+        <p class="text-gray-400 text-sm leading-relaxed">Proficient in rapid UI creation, absolute theme extension, responsive utilities, and micro-layouts.</p>
       </div>
 
     </div>
@@ -164,7 +242,7 @@
             A personal portfolio website built using HTML, CSS, and JavaScript with animations.
           </p>
           <a href="#" target="_blank"
-            class="inline-block bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+            class="inline-block bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-extrabold px-5 py-2.5 rounded-xl shadow-md hover:shadow-yellow-500/20 hover:-translate-y-0.5 transition duration-300">
             View Project
           </a>
         </div>
@@ -181,7 +259,7 @@
             A responsive e-commerce website UI with modern grid design and interactive elements.
           </p>
           <a href="#" target="_blank"
-            class="inline-block bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+            class="inline-block bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-extrabold px-5 py-2.5 rounded-xl shadow-md hover:shadow-yellow-500/20 hover:-translate-y-0.5 transition duration-300">
             View Project
           </a>
         </div>
@@ -193,12 +271,12 @@
         <img src="assets/project3.jpg" alt="Project 3"
           class="w-full h-48 object-cover group-hover:opacity-80 transition">
         <div class="p-6 text-left">
-          <h3 class="text-xl font-semibold mb-2 text-white">Restaurant Web</h3>
+          <h3 class="text-xl font-semibold mb-2 text-white">Weather Forecast App</h3>
           <p class="text-gray-300 mb-4">
             A weather forecast app using JavaScript API integration with smooth UI animations.
           </p>
           <a href="#" target="_blank"
-            class="inline-block bg-yellow-400 text-black font-bold px-4 py-2 rounded-lg hover:bg-yellow-500 transition">
+            class="inline-block bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-extrabold px-5 py-2.5 rounded-xl shadow-md hover:shadow-yellow-500/20 hover:-translate-y-0.5 transition duration-300">
             View Project
           </a>
         </div>
@@ -212,13 +290,14 @@
   <section id="contact" class="py-20 bg-gray-900 text-center">
     <h2 class="text-3xl font-bold mb-10 text-yellow-500">Contact Me</h2>
     <form class="max-w-xl mx-auto bg-gray-800 p-6 rounded-lg shadow space-y-4">
-      <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" requiyellow>
-      <input type="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 text-white" requiyellow>
+      <input type="text" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" required>
+      <input type="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 text-white" required>
       <textarea placeholder="Your Message" class="w-full p-3 rounded bg-gray-700 text-white h-32"
-        requiyellow></textarea>
+        required></textarea>
       <button type="submit"
-        class="bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition">Send
-        Message</button>
+        class="w-full bg-gradient-to-r from-yellow-400 to-amber-500 hover:from-yellow-500 hover:to-amber-600 text-black font-extrabold px-6 py-3.5 rounded-xl shadow-lg shadow-yellow-500/10 hover:shadow-yellow-500/30 hover:-translate-y-0.5 transition duration-300">
+        Send Message
+      </button>
     </form>
   </section>
 
